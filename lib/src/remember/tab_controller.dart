@@ -7,7 +7,8 @@ import 'package:cancellable/cancellable.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:remember/remember.dart' show RememberChangeNotifierExt;
 
-extension RememberMaterialSupportsExt on BuildContext {
+/// TabController 扩展
+extension RememberTabControllerExt on BuildContext {
   /// 快速生成一个可重用的 TabController
   /// * 调用顺序,[key],[initialIndex],[animationDuration],[length] 确定是否为同一个对象 如果发生了变化则重新创建
   /// * [initialIndex] 初始索引
@@ -23,17 +24,16 @@ extension RememberMaterialSupportsExt on BuildContext {
     FutureOr<void> Function(TabController)? onDispose,
     bool listen = false,
     Object? key,
-  }) =>
-      rememberChangeNotifier<TabController>(
-        factory2: (l) => TabController(
-          initialIndex: initialIndex,
-          animationDuration: animationDuration,
-          length: length,
-          vsync: l.tickerProvider,
-        ),
-        onCreate: onCreate,
-        onDispose: onDispose,
-        listen: listen,
-        key: FlexibleKey(initialIndex, animationDuration, length, key),
-      );
+  }) => rememberChangeNotifier<TabController>(
+    factory2: (l) => TabController(
+      initialIndex: initialIndex,
+      animationDuration: animationDuration,
+      length: length,
+      vsync: l.tickerProvider,
+    ),
+    onCreate: onCreate,
+    onDispose: onDispose,
+    listen: listen,
+    key: FlexibleKey(initialIndex, animationDuration, length, key),
+  );
 }

@@ -7,7 +7,7 @@ This package provides Material UI components with lifecycle management and remem
 ## Features
 
 - **`LifecycleTabBarView`**: A drop-in replacement for `material_ui`'s `TabBarView` that manages the lifecycle of each child item (`resumed`, `started`, and `created`) based on tab visibility. Supports `itemKeepAlive` and custom `itemScopeBuilder`.
-- **`rememberTabController`**: Extension on `BuildContext` (`RememberMaterialSupportsExt`) to create, retain, and automatically dispose a `TabController` bound to the widget's lifecycle with built-in `TickerProvider`.
+- **`rememberTabController`**: Extension on `BuildContext` to create, retain, and automatically dispose a `TabController` bound to the widget's lifecycle with built-in `TickerProvider`.
 
 ## Getting started
 
